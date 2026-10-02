@@ -14,7 +14,7 @@
             Console.Write("Type the total portions: ");
             int totalPortions = Convert.ToInt32(Console.ReadLine());
             Console.Write("Type the total calories: ");
-            int totalCalories = Convert.ToInt32(Console.ReadLine());
+            double totalCalories = Convert.ToDouble(Console.ReadLine());
             Console.Write("Type the preparation time (in minutes): ");
             int preparationTime = Convert.ToInt32(Console.ReadLine());
             Console.Write("Type the category (single character): ");
@@ -22,9 +22,12 @@
 
             bool hasAvailableIngredients = false;
 
-            Console.WriteLine("\nThis recipe creates " + totalPortions + " portions of " + recipeName + " with a total of " + totalCalories + " calories. " +
-                "It takes " + preparationTime + " minutes to prepare, and this is the state of the available ingredients: " + hasAvailableIngredients + ". " +
-                "Currently, this recipe resides in category: " + category);
+            double caloriesPerPortion = totalCalories / totalPortions;
+
+            Console.WriteLine("\nThis recipe creates " + totalPortions + " portions of " + recipeName +
+                ", containing " + caloriesPerPortion + " calories per portion. " +
+                "It takes " + preparationTime + " minutes to prepare, and this is the state of the available ingredients: " +
+                hasAvailableIngredients + ". Currently, this recipe resides in category: " + category);
         }
     }
 }
