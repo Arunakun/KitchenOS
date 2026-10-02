@@ -22,12 +22,9 @@
 
             bool hasAvailableIngredients = false;
 
-            Console.WriteLine("\nRecipe: " + recipeName);
-            Console.WriteLine("Portions: " + totalPortions);
-            Console.WriteLine("Total calories: " + totalCalories);
-            Console.WriteLine("Preparation time: " + preparationTime + " minutes");
-            Console.WriteLine("Available ingredients: " + hasAvailableIngredients);
-            Console.WriteLine("Category: " + category);
+            Console.WriteLine("\nThis recipe creates " + totalPortions + " portions of " + recipeName + " with a total of " + totalCalories + " calories. " +
+                "It takes " + preparationTime + " minutes to prepare, and this is the state of the available ingredients: " + hasAvailableIngredients + ". " +
+                "Currently, this recipe resides in category: " + category);
         }
     }
 }
