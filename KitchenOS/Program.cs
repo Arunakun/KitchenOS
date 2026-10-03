@@ -9,30 +9,27 @@
             Console.WriteLine("Welcome to KitchenOS, the ultimate kitchen management system!");
             Console.WriteLine("This application is designed to help you manage your kitchen efficiently, from inventory tracking to recipe management.");
 
-            Console.Write("\nType the name of the recipe: ");
-            string recipeName = Console.ReadLine();
-            Console.Write("Type the total portions: ");
-            int totalPortions = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Type the total calories: ");
-            double totalCalories = Double.Parse(Console.ReadLine());
-            Console.Write("Type the total recipe time (in minutes): ");
-            int totalRecipeTime = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Type the category (single character): ");
-            char category = Console.ReadLine()[0];
-
-            Console.Write("Type an ingredient for this recipe: ");
-            string ingredient = Console.ReadLine();
-            Console.Write("Type the measurement unit for this ingredient: ");
-            string measurementUnit = Console.ReadLine();
-            Console.Write("Type the quantity needed for this ingredient: ");
-            double quantityNeeded = Double.Parse(Console.ReadLine());
-            Console.Write("Type how many units of this ingredient are available in the kitchen: ");
-            double unitsAvailable = Double.Parse(Console.ReadLine());
-
+            string recipeName = "Easy Homemade Lasagna";
+            int totalPortions = 12;
+            double totalCalories = 4632;
+            int totalRecipeTime = 103; // Recipe time in minutes
+            char category = 'C';
+            string ingredient = "Ricotta Cheese";
+            string measurementUnit = "cups";
+            double quantityNeeded = 2;
+            double unitsAvailable = 5; // Example value
+            double proteinTotal = 276; // Total protein in grams for the entire recipe
+            double fatTotal = 252; // Total fat in grams for the entire recipe
+            double carbsTotal = 324; // Total carbohydrates in grams for the entire recipe
+            double sodiumTotal = 10680; // Total sodium in milligrams for the entire recipe
             bool hasAvailableIngredients = true;
 
-            double caloriesPerPortion = totalCalories / totalPortions;
             double remainingUnits = unitsAvailable - quantityNeeded;
+            double caloriesPerPortion = totalCalories / totalPortions;
+            double proteinPerPortion = proteinTotal / totalPortions;
+            double fatPerPortion = fatTotal / totalPortions;
+            double carbsPerPortion = carbsTotal / totalPortions;
+            double sodiumPerPortion = sodiumTotal / totalPortions;
 
             Console.WriteLine("\nThis recipe creates " + totalPortions + " portions of " + recipeName +
                 ", containing " + caloriesPerPortion + " calories per portion. " +
@@ -42,6 +39,18 @@
             Console.WriteLine("\nThe first ingredient for this recipe is " + ingredient + ", which requires " + quantityNeeded + " " + measurementUnit +
                 ". There are currently " + unitsAvailable + " " + measurementUnit + " of this ingredient available in the kitchen. " +
                 "After using this ingredient for the recipe, there will be " + remainingUnits + " " + measurementUnit + " left in the kitchen.");
+
+            Console.WriteLine("\nThe total nutritional information for this recipe is as follows: " +
+                "\nProtein: " + proteinTotal + " grams" +
+                "\nFat: " + fatTotal + " grams" +
+                "\nCarbohydrates: " + carbsTotal + " grams" +
+                "\nSodium: " + sodiumTotal + " milligrams");
+
+            Console.WriteLine("\nThe nutritional information per portion is as follows: " +
+                "\nProtein: " + proteinPerPortion + " grams" +
+                "\nFat: " + fatPerPortion + " grams" +
+                "\nCarbohydrates: " + carbsPerPortion + " grams" +
+                "\nSodium: " + sodiumPerPortion + " milligrams");
         }
     }
 }
