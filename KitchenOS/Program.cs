@@ -34,8 +34,7 @@
 
             Console.WriteLine("\nThis recipe creates " + totalPortions + " portions of " + recipeName +
                 ", containing " + caloriesPerPortion + " calories per portion. " +
-                "It takes " + totalRecipeTime + " minutes to prepare, and this is the state of the available ingredients: " +
-                hasAvailableIngredients + ". Currently, this recipe resides in category: " + category);
+                "It takes " + totalRecipeTime + " minutes to prepare. Currently, this recipe resides in category: " + category);
 
             Console.WriteLine("\nThe first ingredient for this recipe is " + ingredient + ", which requires " + quantityNeededTotal + " " + measurementUnit +
                 ". There are currently " + unitsAvailable + " " + measurementUnit + " of this ingredient available in the kitchen. " +
